@@ -1,7 +1,6 @@
 package com.spring.jpa.chap01_basic.entity;
 
 import lombok.*;
-import net.bytebuddy.asm.Advice;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
