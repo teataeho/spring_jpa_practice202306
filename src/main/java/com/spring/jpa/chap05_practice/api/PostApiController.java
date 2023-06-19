@@ -30,8 +30,12 @@ public class PostApiController {
     @GetMapping
     public ResponseEntity<?> list(PageDTO pageDTO) { //?로 설정하면 알맞는 엔터티를 찾아서 리턴한다.
         log.info("/api/v1/posts?page={}&size={}", pageDTO.getPage(), pageDTO.getSize());
+
         PostListResponseDTO dto = postService.getPosts(pageDTO);
-        return null;
+
+        return ResponseEntity
+                .ok()
+                .body(dto);
     }
 
 }
