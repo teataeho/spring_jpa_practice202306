@@ -1,5 +1,6 @@
 package com.spring.jpa.chap05_practice.dto;
 
+import com.spring.jpa.chap05_practice.entity.Post;
 import lombok.*;
 
 import javax.validation.constraints.NotBlank;
@@ -25,5 +26,14 @@ public class PostCreateDTO {
     private String content;
 
     private List<String> hashTags;
+
+    public Post toEntity() {
+        return Post.builder()
+                .writer(this.writer)
+                .content(this.content)
+                .title(this.title)
+                //해시태그는 여기서 넣는게 아니에요~~~
+                .build();
+    }
 
 }
